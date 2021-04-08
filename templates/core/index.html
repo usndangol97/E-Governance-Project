@@ -1,0 +1,121 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block body %}
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#slides" data-slide-to="0" class="active"></li>
+            <li data-target="#slides" data-slide-to="1"></li>
+            <li data-target="#slides" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'core/img/9.jpg' %}">
+                <div class="carousel-caption">
+                    <h1 class="display-2">Welcome</h1>
+                    <h3>To Online Registratgion</h3>
+                    <button type="button" class="btn btn-outline-light btn-lg"><span>APPLY NOW</span></button>
+                    <button type="button" class="btn btn-primary btn-lg"><span>Learn More</span></button>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'core/img/8.jpg' %}">
+
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'core/img/10.jpg' %}">
+            </div>
+        </div>
+    </div>
+    <!--End of Image slider-->
+
+    <!--Welcome section-->
+    <div class="container-fluid padding">
+        <div class="row welcome text-center">
+            <div class="col-12">
+                <h1 class="display-4">Our Services</h1>
+            </div>
+            <hr>
+            <div class="col-12">
+                <p class="lead">You can apply and register various Governmental Administratives works online. Stay Home Stay Safe</p>
+                <p class="lead">"Government Of Nepal"</p>
+            </div>
+        </div>
+    </div>
+    <!--End of Welcome section-->
+
+    <!--Cards-->
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'core/img/02.jpg' %}">
+                    <div class="card-body">
+                        <h4 class="card-title">Driving Lisence</h4>
+                        <p class="card-text">Click on proceed to apply</p>
+                        <a href="{% url 'core_app:License_Registration' %}" class="btn btn-outline-secondary"><span>Proceed</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'core/img/03.jpg' %}">
+                    <div class="card-body">
+                        <h4 class="card-title">Birth Registration</h4>
+                        <p class="card-text">Click on proceed to apply</p>
+                        <a href="#" class="btn btn-outline-secondary"><span>Proceed</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="{% static 'core/img/result-1.jpg' %}">
+                    <div class="card-body">
+                        <h4 class="card-title">Your Results</h4>
+                        <p class="card-text">Click on view to see your results.</p>
+                        <a href="{% url 'core_app:result' %}" class="btn btn-outline-secondary"><span>Veiw</span></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--End of Cards-->
+
+
+    <!--Connect-->
+    <section id="Contact">
+        <div class="container-fluid padding">
+            <div class="row text-center padding">
+                <div class="col-12">
+                    <h2>Connect</h2>
+                </div>
+                <div class="col-12 social padding">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="far fa-envelope"></i></a>
+                    <a href="#"><i class="fab fa-viber"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End of Connect-->
+
+    <!--Scroll top-->
+    <div class="Scroll-top">
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{% static 'core/js/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'core/js/scrolltop.js' %}"></script>
+    <script type="text/javascript" src="{% static 'core/js/smooth-scroll.js' %}js/smooth-scroll.js"></script>
+    <script>
+        var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
+{% endblock %}
+    

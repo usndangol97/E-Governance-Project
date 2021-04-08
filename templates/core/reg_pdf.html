@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h2 align="center">DRIVING LICENCE REGISTRATION DETAIL</h2>
+    <hr width="75%" >
+    {% for i in info %}
+    {% for j in addr %}    
+        <div class="top-body" width="70%" style="padding-left: 200px;">
+            <div style="font-size: 20px;">
+                <table>
+                    <tr>
+                        <td>Reference number&emsp;</td>
+                        <td>: 123456789</td>
+                    </tr>
+                    <tr>
+                        <td>Applicant Name&emsp;</td>
+                        <td>: {{ i.f_name }} {{ i.m_name }} {{ i.l_name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Registration Date&emsp;</td>
+                        <td>: {{ i.registered_date }}</td>
+                    </tr>
+                    <tr>
+                        <td>Address&emsp;</td>
+                        <td>: {{j.ward_no}}, {{j.village}}, {{j.district}}, {{j.zone}}, Nepal</td>
+                    </tr>
+                    <tr>
+                        <td>Parent/Spouse Name&emsp;</td>
+                        <td>: {{ i.w_f_name }} {{ i.w_m_name }} {{ i.w_l_name }}</td>
+                    </tr>
+                    <tr>
+                        <td>Citizenship number&emsp;</td>
+                        <td>: {{ i.citizenship_no }}</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile number&emsp;</td>
+                        <td>: {{j.contact_no}}</td>
+                    </tr>
+                    <tr>
+                        <td>Applied Category&emsp;</td>
+                        <td>: {{j.l_category}}</td>
+                    </tr>
+                    <tr>
+                        <td>Date of visit&emsp;</td>
+                        <td>: {{ i.visit_date }}</td>
+                    </tr>
+                    <tr>
+                        <td>Zone&emsp;</td>
+                        <td>: {{ j.zone }}</td>
+                    </tr>
+                    <tr>
+                        <td>Office of visit&emsp;</td>
+                        <td>: {{j.l_issue_office}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="q">
+                <p style="font-size: 20px;">Note: Applicant must attend zonal office along with below mentioned document for biometric<br>on Date of Visit mentioned above. If in case applicant failed to attend for biometric<br>on the date of visit, those applicant must register onine again.</p>
+                    <p>
+                        <ul type="a">
+                            <li>Original and photo copy of citizenship proof</li>
+                            <li>Blood group card</li>
+                            <li>training  certifate</li>
+                        </ul>
+                    </p>
+            </div>
+        </div>
+        
+    {% endfor %}
+    {% endfor %}
+    <a href="{% url 'core_app:License_Registration' %}">License Registration</a>
+
+</body>
+</html>

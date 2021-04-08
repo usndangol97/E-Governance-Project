@@ -1,0 +1,53 @@
+
+*{
+	padding: 10px;
+}
+.application table thead tr th {
+    background-color:#0099FF;
+}
+
+.application {
+	border:1px solid  #0099FF;
+	border-radius: 3px;
+
+}
+
+.application label select{
+	width: 200px;
+	display: inline-block;
+
+
+}
+.presentadd table thead tr th {
+	background-color:#0099FF;
+}
+.addressdetails{
+	border:1px solid  #0099FF;
+	border-radius: 3px;
+}
+.permanentadd{
+	border:1px solid  #0099FF;
+	border-radius: 3px;
+}
+.presentadd{
+	border:1px solid  #0099FF;
+	border-radius: 3px;
+}
+.examinfo{
+	border:1px solid  #0099FF;
+	border-radius: 3px;
+}
+.final{
+	border:1px solid  #0099FF;
+	border-radius: 3px;
+	border-collapse: collapse;
+	text-align: left;
+}
+.final table tr td select{
+	width: 200px;
+	display: inline-block;
+
+}
+.examinfo table thead tr th{
+	background-color:#0099FF;
+}

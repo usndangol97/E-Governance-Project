@@ -1,0 +1,293 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/style.css' %}" />
+
+    <style>
+        .hidden{
+            display:none;
+        }
+    </style>
+{% endblock %}
+    
+{% block body %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <!-- Personal Details -->
+        <div class="section1">
+            <div class="application">
+                <table style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th colspan="4" allgin="center">
+                                <label id="heading1" >PERSONAL DETAILS</label>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label id="appfname">APPLICANT FIRST NAME</label>
+                            </td>
+
+                            <td>
+                                <!-- <input type="text" name="fnameinput" placeholder="First name"> -->
+                                {{ form.f_name }}
+                            </td>
+                            <td>
+                                <label id="appmname">APPLICANT MIDDLE NAME</label>
+                            </td>
+                            <td>
+                                <!-- <input type="text" name="mnameinput" placeholder="Middle Name"> -->
+                                {{ form.m_name }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label id="applname">APPLICANT LAST NAME</label>
+                            </td>
+                            <td>
+                                <!-- <input type="text" name="lnameinput" placeholder="Last name"> -->
+                                {{ form.l_name }}
+                            </td>
+                            <td>
+                                <label for="DOB">DOB</label>
+                            </td>
+                            <td>
+                                {{ form.dob }}                                
+                            </td>
+                            <tr>
+                                <td>
+                                    <label id="age">AGE</label>
+                                </td>
+                                <td>
+                                    <!-- <input type="number" name="age"> -->
+                                    {{ form.age }}
+                                </td>
+                                <td>
+                                    <label for="gender">GENDER</label>
+                                </td>
+                                <td>
+                                    {{ form.gender }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="bloodgroup">BLOOD GROUP</label>
+                                </td>
+                                <td>
+                                    {{ form.b_group }}
+                                </td>
+                                <td>
+                                    <label for="education">EDUCATION</label>
+                                </td>
+                                <td>
+                                    <!-- <input type="text" name="education" class="education" > -->
+                                    {{ form.education }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="citizenshipno" name="citizenshipno" id="citizenshipno">CITIZENSHIP NO.</label>
+                                </td>
+                                <td>
+                                    <!-- <input type="number" name="citizenshipno" class="citizenshipno"> -->
+                                    {{ form.citizenship_no }}
+                                </td>
+                                <td>
+                                    <label for="citissuedist">CITIZENSHIP ISSUED DISTRICT</label>
+                                </td>
+                                <td>
+                                    {{ form.citizenship_issue_district }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="witnessfname">WITNESS FIRST NAME</label>
+                                </td>
+                                <td>
+                                    <!-- <input type="text" name="witnessfname" class="witnessfname" placeholder="First Name"> -->
+                                    {{ form.w_f_name }}
+                                </td>
+                                <td>
+                                    <label for="witnessnname">WITNESS MIDDLE NAME</label>
+                                </td>
+                                <td>
+                                    <!-- <input type="text" name="witnessmname" class="witnessmname" placeholder="Middle Name"> -->
+                                    {{ form.w_m_name }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="wiLastname">APPLICANT LAST NAME</label>
+                                </td>
+                                <td>
+                                    <!-- <input type="text" name="witnesslname" class="witnesslname" placeholder="Last Name"> -->
+                                    {{ form.w_l_name }}
+                                </td>
+                                <td>
+                                    <label for="witnessrelation">WITNESS RELATIONSHIP</label>
+                                </td>
+                                <td>
+                                    {{ form.w_relationship }}
+                                </td>
+                            </tr>
+                        </tr>
+                    </tbody>
+                </table>                
+            </div>
+            <input type="button" class="btn btn-primary me-md-2" id="nextBtn1" value="Next">
+        </div>
+
+        <!-- Address Details -->
+        <div class="section2 hidden">
+            <div class="presentadd">
+                <table style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th colspan="4" allgin="center">
+                                <label id="heading2">ADDRESS DETAILS</label>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td colspan="4" align="center">
+                                <label id="heading2.2"><B>PRESENT ADDRESS</B></label>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>	
+                        <tr>
+                            <td>
+                                <label for="zone">ZONE</label>
+                            </td>
+                            <td>
+                                {{ form2.zone }}
+                            </td>
+                            <td>
+                                <label for="district">DISTRICT</label>
+                            </td>
+                            <td>
+                                {{ form2.district }}
+                            </td>
+                        </tr>
+                        <tr>                            
+                            <td>
+                                <label for="blockno">Village</label>
+                            </td>
+                            <td>
+                                <!-- <input type="number" name="blocknono" class="blockno" > -->
+                                {{ form2.village }}
+                            </td>
+                            <td>
+                                <label for="wardno">WARD NO</label>
+                            </td>
+                            <td>
+                                <!-- <input type="number" name="wardno" class="wardno" > -->
+                                {{ form2.ward_no }}
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="email">EMAIL</label>
+                            </td>
+                            <td>
+                                <!-- <input type="email" name="emailid" class="emailid" placeholder="Enter Email"> -->
+                                {{ form2.email }}
+                            </td>
+                            <td>
+                                <label for="contactno">CONTACT NO</label>
+                            </td>
+                            <td>
+                                <!-- <input type="number" name="contactno" class="contactno" placeholder="Emergency"> -->
+                                {{ form2.contact_no }}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <input type="button" class="btn btn-primary me-md-2" id="prevBtn1" value="Prev">
+			<input type="button" class="btn btn-primary me-md-2" id="nextBtn2" value="Next">
+        </div>
+
+        <!-- Exam Information -->
+        <div class="section3 hidden">
+            <div class="examinfo">
+                <table style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th colspan="4" allgin="center">
+                                <label id="heading3">EXAM INFORMATION</label>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="10">
+                                <label for="offcontactno">Please select your License Type:</label>
+                            </td>
+                            <td>
+                                {{ form2.l_category }}
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="final">
+                <table  style="width:100%">
+                    <tr>
+                        <td>
+                            <label for="selectzone">SELECT ZONE</label>
+                        </td>
+                        <td>
+                            {{ form2.s_zone }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="liscenceissueoffice">LISCENCE ISSUED OFFICE</label>
+                        </td>
+                        <td>
+                            {{ form2.l_issue_office }}
+                        </td>	
+                    </tr>	
+                </table>            
+            </div>
+            <input type="button" class="btn btn-primary" id="prevBtn2" value="Prev">      
+			<input type="submit" class="btn btn-success submitBtn " value="Submit">
+        </div>
+    </form>
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //next button
+			$("#nextBtn1").click(function(){
+                $('.section1').addClass('hidden');
+                $('.section2').removeClass('hidden');
+			});
+            $("#nextBtn2").click(function(){
+                $('.section2').addClass('hidden');
+                $('.section3').removeClass('hidden');
+			});
+
+            //prev button
+            $("#prevBtn1").click(function(){
+                $('.section2').addClass('hidden');
+                $('.section1').removeClass('hidden');
+			});
+            $("#prevBtn2").click(function(){
+                $('.section3').addClass('hidden');
+                $('.section2').removeClass('hidden');
+			});
+		});
+    </script>
+{% endblock %}
