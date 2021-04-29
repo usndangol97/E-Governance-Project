@@ -57,7 +57,7 @@ class PersonalDetail(models.Model):
     m_name = models.CharField(max_length=100, null=False, blank=True)
     l_name = models.CharField(max_length=100)
     dob = models.DateField()
-    
+    register_date = models.DateField(auto_now_add=True)
     age = models.IntegerField()
     gender = models.CharField(choices=GENDER_CHOICE, max_length=6 ,null=True)
     b_group = models.CharField(choices= BLOOD_GROUP_CHOICE, max_length=3 ,null=True)

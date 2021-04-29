@@ -1,0 +1,85 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Demo</title>
+    <style>
+        body,html {
+            background: #d5eef3;
+            font-size: 15px;
+        }
+        ul{
+            list-style-type: none;
+        }
+        .birth{
+            text-align: center;
+            text-decoration: underline;
+            padding-bottom: 25px; 
+            border-bottom: 4px solid black;            
+        }   
+        .one{
+            margin-left: 150px;
+        }    
+    </style>    
+</head>
+<body>
+    <h1 class="birth">Birth Certificate</h1>
+    {% for i in info %}
+        <table >
+            <tr>
+                <td class="one">Surname</td>
+                <td>: {{i.surname}}</td>
+            </tr>
+            <tr>
+                <td class="one">Given Name</td>
+                <td>: {{i.name}}</td>
+            </tr>
+            <tr>
+                <td class="one">Date Of Birth</td>
+                <td>: {{i.birthdate}}</td>
+            </tr>
+            <tr>
+                <td class="one">Sex</td>
+                <td>: {{i.gender}}</td>
+            </tr>
+            <tr>
+                <td class="one">Place Of Birth</td>
+                <td>: {{i.birthplace}}</td>
+            </tr>
+            <tr>
+                <td class="one">Registration Number</td>
+                <td>: {{i.registration_number}}</td>
+            </tr>
+            <tr>
+                <td class="one">Date of Registration</td>
+                <td>: {{i.registration_date}}</td>
+            </tr>
+            <tr>
+                <td class="one">Date of issue</td>
+                <td>: {{i.issue_date}}</td>
+            </tr>
+            <tr>
+                <td class="one">Father Name</td>
+                <td>: {{i.father}}</td>
+            </tr>
+            <tr>
+                <td class="one">Mother Name</td>
+                <td>: {{i.mother}}</td>
+            </tr>
+            <tr>
+                <td class="one">Birthplace of Father</td>
+                <td>: {{i.birthplace_f}}</td>
+            </tr>
+            <tr>
+                <td class="one">Birthplace of Mother</td>
+                <td>: {{i.birthplace_m}}</td>
+            </tr>
+            
+        </table> 
+    {% endfor %}
+
+</body>
+</html>

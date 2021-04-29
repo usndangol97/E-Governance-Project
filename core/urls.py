@@ -6,5 +6,6 @@ app_name="core_app"
 urlpatterns = [
     path('', views.index, name='home'),
     path('license-registration/', views.FormView, name="License_Registration"),
-    path('result/', views.Result, name='result'),
+    path('result/',views.FormData,name='result'),
+    path('render/pdf/', views.Pdf.as_view(), name='resultPdf'),
 ]

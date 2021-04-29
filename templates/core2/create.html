@@ -1,0 +1,79 @@
+
+{% extends 'core\base.html '%}
+{% load static %}
+{% block body %}
+<form method="POST" action="">
+    {% csrf_token %}
+    <div class="jumbotron">
+        <div role="main" class="form-all">
+            <img src="{% static 'nepalilogo.png' %}" alt="" width="150" class="header-logo-left" />
+            <img src="{% static 'media/flag.gif' %}" alt="" width="40" class="header-logo-right" />
+        </div>
+        <h2 class="form-header" data-component="header">
+            <div ><b>Birth Certificate Registration</b></div>
+            <div><b>Government of Nepal</b></div>
+        </h2>
+        <br>
+        <div class="entry">
+            <div class="data">
+                <label for="Name">Name:</label>
+                {{form.name}}
+            </div>
+            <br>
+            <div class="data">
+                <label for="surname">Surname:</label>
+                {{form.surname}}    
+            </div>
+            <br>
+            <div class="data">
+                <label for="gender">Gender</label>
+                {{form.gender}}
+            </div>  
+            <br>      
+            <div class="data">
+                <label for="birthdate">Birthdate</label>
+                {{form.birthdate}}
+            </div>
+            <br>
+            <div class="data">
+                <label for="birthplace">Birthplace</label>
+                {{form.birthplace}}
+            </div>
+            <br>
+            <div class="data">
+                <label  for="father_name">Father Name</label>
+                {{form.father}}
+            </div>
+            <br>
+            <div class="data">
+                <label  for="mother_name">Mother Name</label>
+                {{form.mother}}
+            </div>
+            <br>
+            <div class="data">
+                <label  for="father_birthplace">Father Birthplace</label>
+                {{form.birthplace_f}}
+            </div>
+            <br>
+            <div class="data">
+                <label  for="mother_birthplace">Mother Birthplace</label>
+                {{form.birthplace_m}}
+            </div>
+            <br>
+            <div class="data">
+                <label for="registration_number">Registration Number</label>
+                {{form.registration_number}}
+            </div>    
+            <br>        
+            <div class="data">
+                <label for="issue_date">Issue Date</label>
+                {{form.issue_date}}
+            </div>
+        </div>
+        <br>
+        <input  type="submit" class="btn btn-primary" value="submit">
+    </div>
+</form>
+
+
+{% endblock %}

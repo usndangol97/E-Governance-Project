@@ -9,10 +9,11 @@
 </head>
 <body>
     <h2 align="center">DRIVING LICENCE REGISTRATION DETAIL</h2>
-    <hr width="75%" >
+    <hr><br><br>
+    <br><br>
     {% for i in info %}
     {% for j in addr %}    
-        <div class="top-body" width="70%" style="padding-left: 200px;">
+        <div class="top-body" width="70%" >
             <div style="font-size: 20px;">
                 <table>
                     <tr>
@@ -25,7 +26,7 @@
                     </tr>
                     <tr>
                         <td>Registration Date&emsp;</td>
-                        <td>: {{ i.registered_date }}</td>
+                        <td>: {{ i.register_date }}</td>
                     </tr>
                     <tr>
                         <td>Address&emsp;</td>
@@ -60,22 +61,21 @@
                         <td>: {{j.l_issue_office}}</td>
                     </tr>
                 </table>
-            </div>
+            </div><br><br>
             <div class="q">
-                <p style="font-size: 20px;">Note: Applicant must attend zonal office along with below mentioned document for biometric<br>on Date of Visit mentioned above. If in case applicant failed to attend for biometric<br>on the date of visit, those applicant must register onine again.</p>
-                    <p>
-                        <ul type="a">
-                            <li>Original and photo copy of citizenship proof</li>
-                            <li>Blood group card</li>
-                            <li>training  certifate</li>
-                        </ul>
-                    </p>
+                <p style="font-size: 20px;" align="center">Note: Applicant must attend zonal office along with below mentioned document for biometric on Date of Visit mentioned above. If in case applicant failed to attend for biometric on the date of visit, those applicant must register onine again.</p>
+                <p>
+                    <ul type="a">
+                        <li>Original and photo copy of citizenship proof</li>
+                        <li>Blood group card</li>
+                        <li>training  certifate</li>
+                    </ul>
+                </p>
             </div>
         </div>
         
     {% endfor %}
     {% endfor %}
-    <a href="{% url 'core_app:License_Registration' %}">License Registration</a>
 
 </body>
 </html>

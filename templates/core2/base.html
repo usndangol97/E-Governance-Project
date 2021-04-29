@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    
+</head>
+<body>
+    <nav class="navbar  mynav" role="navigation" id="navbar">
+        <div class="container">            
+            {% if user.is_authenticated %}                
+                <a class="navbar-brand mynav" href="{% url 'home' %}"><strong>CV Creation</strong></a>
+                <ul class="nav navbar-nav navbar-left mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'cv:create' %}"><strong>Create</strong></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'cv:list' %}"><strong>List</strong></a>  
+                    </li>   
+                </ul>           					
+                <ul class="nav navbar-nav navbar-right mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'cv:logout' %}"><strong>Logout</strong></a>
+                    </li>
+                </ul> 
+            {% else %}
+                <a class="navbar-brand mynav" href="{% url 'welcome' %}"><strong>Welcome To CV Creation</strong> </a>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'cv:login' %}" class="nav-link"><strong>Login</strong></a></li>
+                    <li><a href="{% url 'cv:signup' %}" class="nav-link"><strong>Sign up</strong></a></li>
+                </ul>
+            {% endif %}
+        </div>
+    </nav>
+    <div class="container mycontent">
+        {% block body_block%}
+        {% endblock %}
+    </div>
+</body>
+</html>

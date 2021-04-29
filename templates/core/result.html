@@ -1,0 +1,19 @@
+{% extends 'core\base.html '%}
+{% load static %}
+{% block body %}
+
+    <div class="jumbotron">
+        <h2>Your License Registration form is ready ..</h2>
+        <div class=".container">
+            <a href="{% url 'core_app:resultPdf' %}" >
+                <button class="btn btn-success">View License Registration</button>
+            </a>
+        </div><br><br>
+        <h2>Your Birth Certification form is ready ..</h2>
+        <div class=".container">
+            <a href="{% url 'core2_app:pdf' %}" >
+                <button class="btn btn-success">View Birth Certificate</button>
+            </a>
+        </div>   
+    </div>
+{% endblock %}
